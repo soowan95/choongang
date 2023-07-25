@@ -1,0 +1,58 @@
+2023.07.25
+UI(User Interface)디자인 - 사용자가 편하게 사용하게 만드는 것
+UX(User Experience)디자인 - 사용자가 만족했는가(정보가 유익한가, 도움이 됐는가)
+굿디자인 - 재미있고 유익한 웹/앱 사이트를 제작하는 것
+
+*Edit - vsc
+환경설정
+live Server : 결과 미리보기
+Auto Rename Tag : 앞뒤 태그를 같게 해줌
+Elm Emmet : 빠른 코딩(자동코딩)
+
+*단축기
+ctrl + (+) : 크게 보기
+ctrl + (-) : 작게 보기
+shift + alt + 아래방향키 : 줄 복사
+ctrl + / : 주석 처리
+f11 : 전체 화면
+
+*html5
+html : 인터넷에 테이터를 표시해 주는 언어
+css : html을 디자인 해 주는 언어, 디자인 방법(style - border, color, font-size: 크기를 지정하지 않으면 16px, width, height, cursor: 마우스를 올렸을 때 커서 모양 지정)
+inline style : 태그 안에서 디자인 해줌
+               style 속성은 태그를 꾸며줌. ex) <p style="border: 1px solid black;">
+내부 style : head 태그 안에서 원하는 종류의 태그 스타일을 모두 꾸며줄 수 있음
+ex)<head>
+    <style>
+        td span(td 안에 있는 span을 의미) {
+            color: blue;
+            border : 1px solid red;
+            }
+    </style>
+   </head>
+외부 style : css이용, link태그로 연결할 수 있음. link태그의 hred 속성 안에 경로 지정하면 됨.
+인라인 style > 내부 style > 외부 style 순으로 우선순위가 있음.
+margin : 바깥쪽 여백
+태그(명령어) : <>안에 대게 쌍으로 이루어 진것, 단독적으로 쓰이는 태그도 있음. 태그 안에 있는 옵션을 속성이라 부름.
+선택자 : 특정 태그를 지정 할 수 있음. (class, id, name, tag, >, ~)
+    class : .(점)으로 표시, 중복 사용이 가능함.
+<!DOCTYPE html> : html5 문서임을 표시, 안써도 문제는 없지만 써주는게 좋음.
+<html></html> : html 시작, lang은 언어임, eng는 영어라 영어쓸 때는 생략 가능, 쌍으로 이루어진 태그는 /로 끝을 알림.
+<head></head> : 이 문서의 정보를 제공
+<title></title> : 문서 제목
+<meta charset="utf-8" /> : 원래 쌍이 없는 태그, 사용 코드 이름 : utf-8(유니코드) 전 세게 언어를 표현 가능.
+<body></body> : 본문 내용
+<br> : 줄 바꿈 태그
+<p></p>: 문장 태그, 자동 줄 바꿈(2줄)
+<span></span> : 글자 태그, 자동 칸 띄움
+<pre></pre> : 작성한 그대로 html에 제공되는 태그
+<img src="" alt=""> : scr 속성은 경로를 의미. src 속성에 이미지가 저장된 경로를 입력하면 이미지가 출력되는 태그
+                      alt 속성에는 scr 속성에 의미 없는 경로가 지정될 경우 대체 출력할 텍스트를 입력
+                      title 속성은 마우스를 이미지에 올렸을 때 나올 설명을 작성
+<table></table> : 표 만들기, cellspacing/cellpadding 속성으로 칸 사이의 간격 조정
+    <thead></thead> : 테이블의 정보
+    <tbody></tbody> : 테이블의 본문
+        <tr></tr> : 줄 만들기
+            <td></td> : 칸 만들기. colspan속성을 이용해 칸 병합 가능 ex)colspan="4" 은 4칸 셀 병합
+                                  rowspan속성을 이용해 줄 병합 가능.
+    <caption></caption> : 표 이름

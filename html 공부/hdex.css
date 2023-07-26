@@ -1,0 +1,105 @@
+.logo {
+    width: 100%; height: 50px;
+    background: url(img/hdex2.jpg);
+    background-size: 100% 100%;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.top {
+    margin-top: 10px;
+    margin-left: 250px;
+    font-size: 14px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.top div {
+    height: 45px; line-height: 45px;
+    text-align: center;
+    border: 0px solid black;
+    width: 5%;
+    cursor: pointer;
+}
+.top div:first-child {
+    width: 13%; height: 45px;
+    background: url(img/hdex1.png);
+    background-size: 100% 100%;
+}
+.top div:nth-child(2) {
+    width: 1%;
+}
+.top div:nth-child(3) {
+    color: rgb(214,185,89);
+    width: 8%;
+}
+.top div:nth-child(4) {
+    width: 10%;
+}
+.top div:last-child {
+    width: 7%;
+}
+.pic {
+    border: 0px solid black;
+    width: 60%; height: 530px;
+    margin-left: 400px;
+    margin-top: 100px;
+}
+.pic p {
+    cursor: pointer;
+}
+.pic div {
+    width: 100%; height: 450px;
+    background: url(img/hdex3.jpeg);
+    background-size: 100% 100%;
+}
+.pic p {
+    border: 0px solid black;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 70px;
+    margin: 30px 0px 50% 50%;
+}
+.popup {
+    position: absolute;
+    top: 100px; left: 100px;
+
+    width: 500px; height: 700px;
+    border: 3px solid #ccc;
+    background: white;
+}
+.popup .pic1 {
+    border: 0px solid black;
+    width: 100%; height: 300px;
+    background: url(img/선착순.gif);
+    background-size: 100% 100%;
+}
+.popup .pic2 {
+    border: 0px solid black;
+    width: 100%; height: 200px;
+    background: url(img/1+1.jpg);
+    background-size: 100% 100%;
+}
+.popup p {
+    margin: 0 auto;
+    border: 0px solid black;
+    width: 100%; height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px; font-weight: bold;
+    background: black;
+    color: white;
+    cursor: pointer;
+}
+.popup .click {
+    border: 0px solid black;
+    width: 100%; height: 100px;
+    display: flex;
+}
+.popup .click div {
+    font-size: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 50%; height: 100%; line-height: 100px;
+    cursor: pointer;
+}

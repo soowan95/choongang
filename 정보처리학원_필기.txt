@@ -45,7 +45,7 @@ margin : 바깥쪽 여백
 <body></body> : 본문 내용
 <br> : 줄 바꿈 태그
 <p></p>: 문장 태그, 자동 줄 바꿈(2줄), p태그 안에는 p태그나 div태그가 못 들어감.
-<span></span> : 글자 태그, 자동 칸 띄움
+<span></span> : 글자 태그
 <pre></pre> : 작성한 그대로 html에 제공되는 태그
 <img src="" alt=""> : scr 속성은 경로를 의미. src 속성에 이미지가 저장된 경로를 입력하면 이미지가 출력되는 태그
                       alt 속성에는 scr 속성에 의미 없는 경로가 지정될 경우 대체 출력할 텍스트를 입력
@@ -73,8 +73,25 @@ margin-top   |     X                   O
 margin-left  |     O                   O
 ----------------------------------------------------
 * : 모든 기본 태그를 뜻 함. ex) *{margin: 0;} 은 모든 태그의 margin을 0으로 만듦.
-inherit : 부모의 정보를 상속 받음 ex) height: inherit; ->은 height: 100%;와 정확히 일치함.
+    * {margin: 0; list-style: none; padding: 0;} 은 기본으로 입력해 두는 것이 좋음.
+inherit : 부모의 정보를 상속 받음 ex) height: inherit; 은 height: 100%;와 정확히 일치함.
 rem : 글자크기의 기본 단위. 1rem = 16px. 이것은 임의로 지정한 html의 px에 따라 달라짐.
 background에 이미지를 넣을 수 있음. ex) background: url(경로지정); 여기서 ../은 현재 디렉토리에서 나간다는 의미.
 opacity : 투명도 조절 0~1.
 text-indent : 글자 들여쓰기.
+
+2023.07.27 Thu
+display : 태그의 구조를 바꿀 수 있음. (flex, inline, block, inline-block: inline으로 변경하되 block의 속성을 유지하라. 등)
+<ol></ol>(order list) : 순서 있는 목록 태그.
+<ul></ul>(unorder list) : 순서 없는 목록 태그.
+<li></li> : ol과 ul태그 안에 반드시 포함 되어야 하는 태그.
+            list-style : 앞의 기호를 없앨 수 있음.
+position : 위치를 지정하는 속성(absolute, fixed, relative), top, left, right, bottom, z-index(레이어 개념으로 위/아래(레벨) 설정 가능.)을 지정 할 수 있음.
+    absolute : 절대 주소 - 기준은 부모 태그, 설정하면 다른 태그 위에 있음.
+    fixed : 고정된 주소 - 기준은 왼쪽/위쪽(0,0), 설정하면 다른 태그 위에 있음.
+    relative : 상대 주소 - 기준은 자기 자리
+<video></video> : 비디오를 열어주는 태그, autoplay속성을 통해 자동 재생가능, loop속성을 통해 반복횟수 설정 가능, contrels속성을 통해 재생버튼 생성, muted속성으로 시작시 음소거 가능
+    <source /> : 단독 태그이고 src속성을 통해 video태그의 경로를 지정해 줌. type속성을 통해 재생할 video의 확장자를 알려줘야 함.
+transform : 태그의 정보를 새롭게 지정할 수 있음 ex) transform: translateX(-50%); 은 x축으로 -50%만큼 이동한 것임.
+id : #으로 표시함, class와 다르게 중복 불가능함, js에서 사용 가능함.
+onclick(js언어) : 태그 클릭시 출력을 만들어 줌. ex) <div onclick="vid.style.display='none'"> 은 div태그를 클릭시 vid라는 이름의 id를 가진 태그를 없애는 문법임.

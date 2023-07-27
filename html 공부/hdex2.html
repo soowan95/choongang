@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hdex2.css">
+</head>
+<body>
+    <ul class="main">
+        <li class="left">
+            <img src="img/instar1.png" alt="" id="bigInstar">
+        </li>
+        <li class="right">
+            <table class="tab" cellspacing="8">
+                <tr>
+                    <td class="a">
+                        <div>
+                            <img src="img/instar2.png" alt="" id="instar">
+                        </div>
+                        <div>전화번호,사용자 이름 또는 이메일</div>
+                        <div>비밀번호</div>
+                        <div>로그인</div>
+                        <div id="login">facebook으로 로그인</div>
+                        <div>비밀번호를 잊으셨나요?</div>
+                        <div class="middle">또는</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="b">
+                        <span id="fspan">계정이 없으신가요?</span>
+                        <span id="sspan">가입하기</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="c">
+                        <p>앱을 다운로드하세요.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="d">
+                        <div></div>
+                        <div></div>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    <div class="select">
+        <div onclick="bigInstar.src='img/instar1.PNG', instar.src='img/instar2.PNG', login.innerHTML='facebook으로 로그인'"></div>
+        <div onclick="bigInstar.src='img/facebook.JPG', instar.src='img/facebooktitle.JPG', login.innerHTML='instargram으로 로그인'"></div>
+    </div>
+</body>
+</html>

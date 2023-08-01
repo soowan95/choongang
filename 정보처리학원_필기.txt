@@ -116,3 +116,10 @@ align-items : margin을 사용하지 않고 정렬 가능함.
     <aside></aside> : 광고/배너 태그
 <small></small> : 부모태그에서 설정한 글자 크기보다 조금 작은 태그
 웹폰트 : 인터넷 상에서 웹아이콘 제공(구글)
+
+2023.08.01 Tue
+animation : 움직임
+    from / 0% : 움직임의 시작
+    to / 100% : 움직임의 끝
+subLeft : 카멜 표기법
+sub_left : 파스칼 표기법

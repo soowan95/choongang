@@ -122,4 +122,32 @@ animation : 움직임
     from / 0% : 움직임의 시작
     to / 100% : 움직임의 끝
 subLeft : 카멜 표기법
-sub_left : 파스칼 표기법
+SubLeft : 파스칼 표기법
+sub_left : 언더스코어 표기법
+
+2023.08.03 Thu (Js 시작, jQuery라는 라이브러리 사용.)
+JavaScript : 웹브라우저의 이벤트를 제어하는 프로그램. Html과 함께 사용함.
+    Js 실행 후 Html을 실행함.
+alert("") : ""안에 입력한 내용을 html에 알림을 보내는 api.
+
+데이터 종류 : 원시 데이터형, 오브젝트 데이터형
+    원시 데이터형(type) : 더 이상 분해 할 수 없음.
+        1. Number : 숫자
+        2. String : 문자
+        3. Boolean : 명제
+        4. Undefined : 값이 지정되지 않은 상태
+        5. Null : 값의 존재조차 모르는 상태
+    오브젝트 데이터형(type) : 원시 데이터의 모임.
+        1. Array : 배열
+        2. Object : 객체
+        3. Class, Interface 등등
+
+변수 선언법
+    1. var : any타입. 어떤 값이든 저장 가능.
+    2. let : 같은 타입 데이터만 입력.
+    3. const : 상수 값을 지정.
+
+Js 기본 문법
+    1. 한 문장의 끝에는 항상 ; 을 입력.
+    2. 대, 소문자를 구분함.
+    3. 주석

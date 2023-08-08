@@ -163,3 +163,5 @@ API(Application Programing Interface) : 프로그램 작정 도와주는 프로�
             .attr() : 속성을 바꿔라
             .html() : 텍스트 바꿔라
             div:nth-child(i + 1)은 div:eq(i) 와 정확히 일치
+2023.08.08 Tue
+    new Intl.NumverFormat('ko') : 숫자 표시방식을 한국식으로 표기함. ex) const Num = new Intl.NumverFormat('ko'); Num.format(10000)은 10,000으로 출력됨.

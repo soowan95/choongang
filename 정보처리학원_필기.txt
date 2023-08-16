@@ -164,7 +164,7 @@ API(Application Programing Interface) : 프로그램 작정 도와주는 프로�
             .html() : 텍스트 바꿔라
             div:nth-child(i + 1)은 div:eq(i) 와 정확히 일치
 2023.08.08 Tue
-    new Intl.NumverFormat('ko') : 숫자 표시방식을 한국식으로 표기함. ex) const Num = new Intl.NumverFormat('ko'); Num.format(10000)은 10,000으로 출력됨.
+    new Intl.NumberFormat('ko') : 숫자 표시방식을 한국식으로 표기함. ex) const Num = new Intl.NumberFormat('ko'); Num.format(10000)은 10,000으로 출력됨.
 
 2023.08.09 Wed
 setInterval(함수명, 시간) : 일정 시간마다 반복 실행 해 주는 함수. 1000이 1초.
@@ -182,7 +182,58 @@ function : 실행문을 저장한 코드 모임
 선언적함수 : 함수에 이름이 있는 함수.
 익명함수 : 함수에 이름이 없는 함수. 변수에 함수를 지정할 때 사용
 Return함수 : 결과값을 돌려주는 함수. 1개만 Return함.
-화살표함수 : 익명함수인 let a = function() {}와 화살표함수인 let b = () => {}은 정확히 일치함.
+화살표함수 : 익명함수인 let a = function() {}와 화살표함수인 let a = () => {}은 정확히 일치함.
 콜백함수 : 뒤에서 실행되는 함수. 파라미터가 함수인 함수.
 
-2023.08.11 Fri
+2023.08.16 Wed
+JAVA 호칭
+    JDK : 개발도구
+    JRE : 실행ghksrud
+    JVM : 자바가상머신(번역: 바이트)
+class : 자바를 구성하는 틀. 자바는 class 중심으로 처리됨. 객체를 생성할 수 있는 형태.
+    3가지 구성요소
+        필드(속성) : 클래스에 포함된 변수
+        메소트(Method) : 클래스 안에 있는 함수
+        생성자(Constructor) : 객체가 만들어 질때 초기값 전달
+java Project : 전체 작업
+    package : 작업 묶음
+        Class : 객체 생성 형태
+            속성 : 상태값
+            Method : 실행
+System.(클래스)out.(필드).println()(메소드)
+java api documentation : java api들을 볼 수 있음.
+System.out.printf : %d - 정수, %f - 실수, %c - 문자, %s - 문자열, %b - 논리
+리터럴 : 표현값(Value) - 정수, 실수, 문자, 문자열, 논리값
+    정수 리터럴 : 10진수, 8진수, 16진수, 2진수
+    실수 리터럴 : 소수점형태, 지수형태, double 타입
+    상수 리터럴 : 정해진 값 final로 선언. 이름은 대문자로 사용
+Scanner 클래스는 java.util 패키지 안에 있음.
+    .next() : 공백 이전까지 입력된 문자열을 읽음.
+    .nextInt() : 공백 이전까지 입력된 정수를 읽음.
+    .nextFloat() : 공백 이전까지 입력된 실수를 읽음.
+java.lang 패키지 내용 : 가장 기본적인 클래스들이 들어있음.
+    Object 클래스 : 자바의 최상위 클래스
+        hashCoode() : 객체의 해시코드를 리턴
+        equals(Object obj) : 객체의 주소를 비교
+    System 클래스 : JVM 번역 일부 기능 사용
+        필드 : out, err, in
+        메소드 : exit(int status) - 프로그램 종료
+                currentTimeMills() - 현재 시간을 밀리초 단위를 long 데이터타입으로 리턴
+    String 클래스 : 객체를 생성해서 사용
+        메소드 : append() - 문자열 끝에 추가
+                insert() / delete()
+                toString() - 객체 문자 정보를 리턴
+                replace(시작위치, 끝 위치, 문자열)
+    Math 클래스 : 수학 클래스
+        메소드 : Math.abs() - 절대값
+                Math.ceil() - 올림
+                Math.floor() - 내림
+                Math.round() - 반올림
+                Math.max() - 가장 큰 값
+                Math.min() - 가장 작은 값
+                Math.random() - 난수 발생(0~1의 숫자)
+메소드 : 실행 가능한 프로그램
+1. 클래스 내부, 외부, 생성자 등에서 호출 해야만 실행
+2. 클래스 내부에서 호출은 메소드명(); 으로 호출
+3. 클래스 외부에서 호출은 인스턴스를 통해서 호출(참조변수)
+4. 내부 메소드는 클래스의 멤버함수로 존재함.

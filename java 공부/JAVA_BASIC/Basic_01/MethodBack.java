@@ -6,10 +6,10 @@ public class MethodBack {
   }
 
   static void iam(int no) {
-    Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in, "EUC-KR");
     String name;
     System.out.print("이름을 입력하세요 : ");
-    name = sc.next();
+    name = sc.nextLine();
     System.out.printf("번호 %d : %s\n", no, name);
   }
 

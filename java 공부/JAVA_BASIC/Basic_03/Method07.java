@@ -1,8 +1,4 @@
 public class Method07 {
-  static void sori(String sound) {
-
-  }
-
   static class Cat {
     static String so = "야옹";
 

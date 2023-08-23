@@ -9,7 +9,7 @@ public class InputScreen {
   static ArrayList<String> inputNameA = new ArrayList<String>();
   static ArrayList<String> inputTelA = new ArrayList<String>();
   static ArrayList<Integer> inputAgeA = new ArrayList<Integer>();
-  String name, tel;
+  String name = "익명", tel = "정보 없음";
   int age;
   int count = 0;
   void inputMode() {
@@ -54,6 +54,7 @@ public class InputScreen {
             System.out.println(inputNameA.get(count) + "\t" + inputTelA.get(count) + "\t" + inputAgeA.get(count));
             makeLine();
             System.out.println("저장됐습니다.");
+            name = "익명"; tel = "정보 없음"; age = 0;
             count++;
             con = false;
             break;

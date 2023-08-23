@@ -24,7 +24,7 @@ public class AniAll {
       sori = aniCat.sori;
       leg = aniCat.leg;
       switch(no) {
-        case 1 : System.out.println(name + "의 울음 소리는 " + sori + "입니다.");
+        case 1 : System.out.println(name + "의 울음 소리는 " + sori + "입니다."); break;
         case 2 : System.out.println(name + "의 다리는 " + leg + "개 입니다.");
     }
   }

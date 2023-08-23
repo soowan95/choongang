@@ -63,6 +63,7 @@ public class InputScreen {
         } else {
           makeLine();
           System.out.println("잘 못 된 번호입니다.");
+          break;
         }
       }
     }

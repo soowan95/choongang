@@ -10,7 +10,7 @@ public class InputScreen {
   static ArrayList<String> inputTelA = new ArrayList<String>();
   static ArrayList<Integer> inputAgeA = new ArrayList<Integer>();
   String name = "익명", tel = "정보 없음";
-  int age;
+  int age = 0;
   int count = 0;
   void inputMode() {
     boolean con = true;

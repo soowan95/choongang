@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Management {
@@ -9,9 +10,15 @@ public class Management {
     PrintScreen printScreen = new PrintScreen();
     SearchScreen searchScreen = new SearchScreen();
     EndScreen endScreen = new EndScreen();
+    int no = 0;
     while(endScreen.con == true) {
       firstScreen.firstMode();
-      int no = sc.nextInt();
+      try {
+        no = sc.nextInt();
+      } catch(InputMismatchException e) {
+        System.out.println("잘 못 입력하셨습니다.");
+        sc.nextLine();
+      }
       if(no == 1) 
         inputScreen.inputMode();
       else if(no == 2)

@@ -12,7 +12,7 @@ class Dan extends Apt {
   }
 }
 
-class Any extends Dan {
+class An extends Dan {
   int room = 5;
 }
 
@@ -21,11 +21,14 @@ public class House {
     Apt apt = new Apt();
     Apt aptDan = new Dan();
     Dan dan = new Dan();
-    Dan danAny = new Any();
+    Dan danAny = new An();
     apt.door();
     aptDan.door();
     danAny.door();
     System.out.println(aptDan.room);
+    System.out.println(dan.room);
+    System.out.println(danAny.room + 1);
+    danAny.room += 1;
     System.out.println(dan.room);
     System.out.println(danAny.room);
   }

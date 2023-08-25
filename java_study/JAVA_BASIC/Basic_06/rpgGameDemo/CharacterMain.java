@@ -6,6 +6,8 @@ public class CharacterMain {
   static int str = 1;
   static int exp = 0;
   static int bossKill = 0;
+  static int potion = 0;
+  static String job = "없음";
   void hpBar(int hp) {
     String bar = "";
     for(int i = 0; i < hp; i++) {
@@ -27,4 +29,7 @@ public class CharacterMain {
       exp = 0;
     }
   }
+  void showSkill() {}
+  void skill1() {}
+  int skill2(int monsterHp) {return monsterHp;}
 }

@@ -35,7 +35,7 @@ public class GameDemo {
           makeLine();
           System.out.println("무엇을 하시겠습니까?");
           System.out.println("1. 걷기");
-          System.out.println("2. 휴식");
+          System.out.println("2. 포션");
           System.out.println("3. 상태");
           System.out.println("4. 종료");
           System.out.print("선택 : ");
@@ -47,16 +47,22 @@ public class GameDemo {
           }
         }
         sc.nextLine();
-        if (no == 1)
+        if (no == 1) {
           characterAct.walk();
+          gameTitle.endScreen(no);
+          no = gameTitle.endScreen(no);
+        }
         else if (no == 2)
-          characterAct.rest();
+          characterAct.potionDrink();
         else if (no == 3) {
           characterStatus.showStatus();
           no = 1;
         }
-        else
+        else {
+          makeLine();
+          System.out.println("|||||||||||Game Over||||||||||");
           break;
+        }
       } else {
         System.out.println("|||||||||||Game Over||||||||||");
         break;

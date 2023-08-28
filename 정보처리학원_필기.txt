@@ -279,3 +279,10 @@ Heap영역 : 동적할당(실행하면서) 사용되는 영역, 참조형(배열
 사용 목적 : 재활용, 유지보수가 쉬움. 확장성이 좋음.
 접근제어자 : public | private | protected        | default
             공용    | 비공개  | 상속 범위 내 공개 | 같은 패키지 내 공개
+
+2023.08.28 Mon
+기본타입 8개
+    정수형 : byte(1), short(2), int(4), long(8)
+    실수형 : float(4), double(8)
+    논리형 : boolean(1)
+    문자형 : char(2)

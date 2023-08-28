@@ -286,3 +286,4 @@ Heap영역 : 동적할당(실행하면서) 사용되는 영역, 참조형(배열
     실수형 : float(4), double(8)
     논리형 : boolean(1)
     문자형 : char(2)
+System.identityHashCode(참조형) : 참조형의 주소값을 출력함.

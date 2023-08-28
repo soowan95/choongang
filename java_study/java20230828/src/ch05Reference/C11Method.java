@@ -1,3 +1,5 @@
+package ch05Reference;
+
 public class C11Method {
   public static void main(String[] args) {
     int[] a = method1();

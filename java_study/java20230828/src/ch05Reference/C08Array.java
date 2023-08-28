@@ -1,3 +1,5 @@
+package ch05Reference;
+
 public class C08Array {
   public static void main(String[] args) {
     int[] a = { 3, 4, 5 };

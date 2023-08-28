@@ -1,3 +1,5 @@
+package ch05Reference;
+
 public class C07Reference {
   public static void main(String[] args) {
     String a = "java";

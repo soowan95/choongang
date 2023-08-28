@@ -1,3 +1,5 @@
+package ch05Reference;
+
 public class C02Reference {
   public static void main(String[] args) {
     String a;

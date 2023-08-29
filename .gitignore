@@ -3,3 +3,7 @@
 *.iml
 /java_study/java20230828/src/out/
 /java_study/bin/
+/out/production/java20230828/.idea/misc.xml
+/out/production/java20230828/.idea/modules.xml
+/out/production/java20230828/.idea/vcs.xml
+*/xml

@@ -288,3 +288,9 @@ Heap영역 : 동적할당(실행하면서) 사용되는 영역, 참조형(배열
     문자형 : char(2)
 System.identityHashCode(참조형) : 참조형의 주소값을 출력함.
 객체 : 속성(값, 필드, property, attribute), 기능(메소드, 함수, 액션)
+
+2023.08.29 Tue
+intellij 단축키
+    줄맞춤 : ctrl + alt + l
+private한 필드는 자식 클래스에서 사용할 수 없음. 때문에 상속시 필드는 신경쓰지 않고 메소드만 생각할 때가 많음.
+@Override : 컴파일시 재정의한 메소드인지 검증함.

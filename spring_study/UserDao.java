@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public abstract class UserDao {
+public class UserDao {
   private ConnectionMaker connectionMaker;
 
   public UserDao() {
@@ -43,11 +43,8 @@ public abstract class UserDao {
     return user;
   }
 
-  public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
-
-
   public static void main(String[] args) throws ClassNotFoundException, SQLException {
-    UserDao dao = new NUserDao();
+    UserDao dao = new UserDao();
 
     User user = new User();
     user.setId("whiteship");

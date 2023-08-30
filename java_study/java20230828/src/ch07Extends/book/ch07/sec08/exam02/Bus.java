@@ -1,4 +1,4 @@
-package ch07Extends.lecture.book.ch07.sec08.exam02;
+package ch07Extends.book.ch07.sec08.exam02;
 
 public class Bus extends Vehicle {
   public void run() {

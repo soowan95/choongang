@@ -3,6 +3,10 @@ package ch07Extends.lecture;
 public class C19Polymorphism {
   public static void main(String[] args) {
     Hero19 myHero = new Hero19();
+
+    myHero.weapon = new Weapon();
+    myHero.attack();
+
     myHero.weapon = new Gun();
     myHero.attack();
 

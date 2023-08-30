@@ -3,5 +3,5 @@
 *.iml
 /java_study/java20230828/src/out/
 /java_study/bin/
-*/xml
-/.out/
+*.xml
+/out/

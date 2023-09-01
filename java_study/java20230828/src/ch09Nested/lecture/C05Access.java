@@ -2,7 +2,7 @@ package ch09Nested.lecture;
 
 public class C05Access {
    String name = "java";
-  class InnerClass {
+   class InnerClass {
     String name = "spring";
 
     void method() {

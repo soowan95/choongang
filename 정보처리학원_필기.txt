@@ -302,3 +302,9 @@ private한 필드는 자식 클래스에서 사용할 수 없음. 때문에 상�
 2023.08.31 Thu
 intellij 단축키
     implements 한 interface에서 구현 해야할 정보를 알려주는 것 : alt + ins
+
+2023.09.01 Fri
+interface에 몸통이 있는 메소드를 만들수 있음. default method
+static fianl 상수는 대문자, 언더스코어 표기법을 사용하기로 함.
+중첩클래스 : 클래스 안에 선언된 클래스. 외부 클래스 안에서만 사용할 목적으로 만든것.
+로컬클래스 : 보통 메소드 안에서 선언된 클래스. 로컬클래스에서 접근하는 지역변수나 파라미터는 final 또는 effectively final이여야 함.

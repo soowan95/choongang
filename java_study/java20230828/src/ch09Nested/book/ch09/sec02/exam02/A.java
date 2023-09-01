@@ -17,7 +17,6 @@ public class A {
     static void method2() {
       System.out.println("B.method2");
     }
-
   }
   void useB() {
     B b = new B();

@@ -2,17 +2,21 @@ package ch16Lambda.lecture;
 
 public class C08MethodReference {
   public static void main(String[] args) {
-    MyClass08 o2 = new MyClass08();
-    MyInterface08 o1 = o2::otherMethod;
+    MyClass08 o1 = new MyClass08();
+    o1.someMethod(o1::otherMethod);
   }
 }
 
 class MyClass08 {
-  void otherMethod(int x, int y) {
-    System.out.println(x - y);
+  void someMethod(MyInterface08 i) {
+    int result = i.method(10,20);
+    System.out.println("result = " + result);
+  }
+  int otherMethod(int x, int y) {
+    return x - y;
   }
 }
 
 interface MyInterface08 {
-  void method(int x, int y);
+  int method(int x, int y);
 }

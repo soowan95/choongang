@@ -12,6 +12,8 @@ public class LambdaExample {
     person.action((x, y) -> (x + y));
 
     person.action((x, y) -> sum(x, y));
+
+    person.action(LambdaExample::sum);
   }
 
   public static double sum(double x, double y) {

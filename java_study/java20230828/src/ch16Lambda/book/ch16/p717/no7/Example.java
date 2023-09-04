@@ -12,10 +12,7 @@ public class Example {
   }
 
   public static void main(String[] args) {
-    int max = maxOrMin((x, y) -> {
-      if(x > y) return x;
-      return y;
-    });
+    int max = maxOrMin(Math::max);
     System.out.println("max = " + max);
 
     int min = maxOrMin((x, y) -> {

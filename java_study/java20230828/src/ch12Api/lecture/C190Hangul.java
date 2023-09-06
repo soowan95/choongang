@@ -17,5 +17,8 @@ public class C190Hangul {
     System.out.println("손흥민".matches("[가-힣]{3}")); // true
     System.out.println("이강인".matches("[가-힣]{3}")); // true
     System.out.println("해리케인".matches("[가-힣]{3}")); // false
+
+    String s = "java";
+    String b = new String("java");
   }
 }

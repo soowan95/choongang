@@ -54,5 +54,54 @@ public class C18Regex {
     System.out.println("doog".matches("do+g")); // true
     System.out.println("dooog".matches("do+g")); // true
     System.out.println("doooog".matches("do+g")); // true
+
+    // 문자 분류 (Character classes)
+    System.out.println("dog".matches("d[oi]g")); // true
+    System.out.println("dig".matches("d[oi]g")); // true
+    System.out.println("dag".matches("d[oi]g")); // false
+
+    System.out.println("dog".matches("d[^oi]g")); // false
+    System.out.println("dig".matches("d[^oi]g")); // false
+    System.out.println("dag".matches("d[^oi]g")); // true
+
+    // 문자 분류 기호
+    System.out.println("0".matches("[0-9]")); // true
+    System.out.println("7".matches("[0-9]")); // true
+    System.out.println("0".matches("\\d")); // true
+    System.out.println("7".matches("\\d")); // true
+
+    System.out.println("a".matches("[a-zA-Z_0-9]")); // true
+    System.out.println("_".matches("\\w")); // true
+    System.out.println("9".matches("\\w")); // true
+
+    // 예제 : 숫자로 시작하면 안되고, 영문대소문자, _, $
+    System.out.println("adsf".matches("[a-zA-Z_$][a-zA-Z_$0-9]*"));
+
+    // 전화번호 패턴
+    String telPattern = "\\d{2,3}-?\\d{3,4}-?\\d{4}";
+    System.out.println("010-5362-9797".matches(telPattern));
+    System.out.println("01053629797".matches(telPattern));
+    System.out.println("025369797".matches(telPattern));
+    System.out.println("010-364-9797".matches(telPattern));
+    System.out.println("010-3464-797".matches(telPattern));
+    System.out.println("010".matches(telPattern));
+
+    // 모든 문자
+    System.out.println(" ".matches(".")); // true
+    System.out.println("a".matches(".")); // true
+    System.out.println("3".matches(".")); // true
+    System.out.println("+".matches(".")); // true
+    System.out.println(".".matches(".")); // true
+
+    // 이메일 패턴
+    // 영문소문자, 숫자가 여러개 @ 영문소문자, 숫자가 여러개 . 영문소준자, 숫자 여러개
+    String ePattern = "[a-z0-9]*@[a-z0-9]*\\.[a-z0-9]*";
+    System.out.println("john23@google3.co2m".matches(ePattern));
+
+    // or : |
+    System.out.println("adusfdogasdf".matches(".*dog.*")); // true
+    System.out.println("asdfcat31".matches(".*cat.*")); //true
+    System.out.println("adusfdogasdf".matches(".*(dog|cat).*")); // true
+    System.out.println("asdfcat31".matches(".*(dog|cat).*")); //true
   }
 }

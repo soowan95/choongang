@@ -1,6 +1,6 @@
 package ch12Api.lecture;
 
-public class C190Hangul {
+public class C19Hangul {
   public static void main(String[] args) {
     // 자바 문자 : unicode
     char a = '\u0d05';

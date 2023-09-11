@@ -1,4 +1,4 @@
-package ch15Collection.book.sec03;
+package ch15Collection.book.ch15.sec03;
 
 import java.util.HashSet;
 import java.util.Iterator;

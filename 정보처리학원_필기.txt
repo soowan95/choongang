@@ -317,3 +317,13 @@ Functional Interface : 추상메소드가 하나인 메소드
 
 2023.09.06 Wed
 Java에서 따옴표안에 \를 사용하려면 두번(\\) 입력해야 함.
+
+2023.09.12 Tue
+LIFO(Last In First Out, Stack) 컬랙션 : 나중에 입력한 정보가 먼저 출력됨.
+  push() : 정보 입력.
+  pop() : 정보 삭제.
+  peek() : 정보 출력. 정보 삭제 안됨.
+FIFO(First In First Out, Queue) 컬랙션 : 처음 입력한 정보가 먼저 출력됨.
+  offer() : 정보 입력.
+  poll() : 정보 삭제.
+  peek() : 정보 출력. 정보 삭제 안됨.

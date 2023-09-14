@@ -1,4 +1,4 @@
-package ch11Exception.book.ch11.sec03.exam01;
+package ch11Exception.lecture;
 
 import java.util.List;
 

@@ -47,6 +47,7 @@ class MyBox {
   
   public void increment() {
 
+    // synchronized block
     synchronized (lock) {
       value++;
     }

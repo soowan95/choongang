@@ -331,3 +331,13 @@ FIFO(First In First Out, Queue) 컬랙션 : 처음 입력한 정보가 먼저 �
 2023.09.14 Thu
 컴퓨터의 출력(java에서는 콘솔)은 표준출력과 표준에러출력이 있음.
 데이터 입출력에는 byteinput(InputStream), byteoutput(OutputStream), characterinput(Reader), characteroutput(Writer) 4가지 종류가 있음.
+
+2023.09.20 Wed
+jsp : client가 server에 request하면 presentation계층에 있는 controller가 business계층에 있는 service를 불러오고
+      service의 메소드를 통해 persistance계층에 있는 dao가 db에서 정보를 받아와 presentation 계층에 있는 model에 정보를 넘김.
+      presentation 계층에 있는 view가 model에서 정보를 가져와 html로 읽고 client에게 response해줌.
+react : view객체가 client의 ip에 존재해서 server의 presentation계층에 model이 없고 controller가 직접 view에 정보를 넘김.
+http (hypertext transfer protocol) : 하이퍼텍스트 전송 규약
+  request : (메소드) (경로) (버전) /는 기본 경로 ex) GET / HTTP/1.1
+
+

@@ -39,33 +39,45 @@ public class Solution13460 {
     }
 
     leftB(mazeW, blueBall);
-    rightB(mazeW, blueBall);
-    Arrays.stream(blueBall).forEach(System.out::println);
-
-    String[] turn = turn(mazeW);
-    System.out.println(turn[1]);
+//    rightB(mazeW, blueBall);
 
     upR(mazeW, redBall);
+    Arrays.stream(mazeW).forEach(System.out::println);
+    System.out.println("빨간공 위치");
     Arrays.stream(redBall).forEach(System.out::println);
+    System.out.println("파란공 위치");
+    Arrays.stream(blueBall).forEach(System.out::println);
 
     return 0;
   }
 
   public void upR(String[] mazeW, int[] locate) {
-    String[] mazeL = turn(mazeW);
-    locate[0] = mazeL[locate[1]].indexOf(".");
-    mazeL[locate[0]] = mazeL[locate[1]].replace("R", ".");
-    mazeL[locate[1]] = mazeL[locate[1]].replaceFirst("\\.", "R");
+    mazeW = turn(mazeW);
+    locate[0] = mazeW[locate[1]].indexOf(".");
+    mazeW[locate[1]] = mazeW[locate[1]].replace("R", ".");
+    mazeW[locate[1]] = mazeW[locate[1]].replaceFirst("\\.", "R");
     redBall = locate;
+    mazeW = turn(mazeW);
+    this.mazeW = mazeW;
+  }
+
+  public void downR(String[] mazeW, int[] locate) {
+    String[] mazeL = turn(mazeW);
+    String rev = revStr(mazeL[locate[1]]);
+    locate[0] = rev.length() - rev.indexOf(".") - 1;
+    rev = rev.replace("R", ".");
+    rev = rev.replaceFirst("\\.", "R");
+    redBall = locate;
+    mazeL[locate[1]] = revStr(rev);
     this.mazeW = turn(mazeL);
   }
 
   public void upB(String[] mazeW, int[] locate) {
     String[] mazeL = turn(mazeW);
     locate[0] = mazeL[locate[1]].indexOf(".");
-    mazeL[locate[0]] = mazeL[locate[1]].replace("B", ".");
+    mazeL[locate[1]] = mazeL[locate[1]].replace("B", ".");
     mazeL[locate[1]] = mazeL[locate[1]].replaceFirst("\\.", "B");
-    redBall = locate;
+    blueBall = locate;
     this.mazeW = turn(mazeL);
   }
 
@@ -81,7 +93,7 @@ public class Solution13460 {
     locate[1] = mazeW[locate[0]].indexOf(".");
     mazeW[locate[0]] = mazeW[locate[0]].replace("B", ".");
     mazeW[locate[0]] = mazeW[locate[0]].replaceFirst("\\.", "B");
-    redBall = locate;
+    blueBall = locate;
     this.mazeW = mazeW;
   }
 
@@ -100,7 +112,7 @@ public class Solution13460 {
     locate[1] = rev.length() - rev.indexOf(".") - 1;
     rev = rev.replace("B", ".");
     rev = rev.replaceFirst("\\.", "B");
-    redBall = locate;
+    blueBall = locate;
     mazeW[locate[0]] = revStr(rev);
     this.mazeW = mazeW;
   }

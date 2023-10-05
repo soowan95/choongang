@@ -5,9 +5,12 @@ import java.util.Arrays;
 public class Solution13460 {
   static private int[] redBall;
   static private int[] blueBall;
-  static private String[] mazeW;
+  static private int[] exitLoca;
+  static private String[] global_mazeW;
+  static private boolean keep;
 
   public int solution13460(int N, int M, String[] mazeW) {
+    setKeep(true);
     setMazeW(mazeW);
 
     int[] redBall = new int[2];
@@ -38,15 +41,20 @@ public class Solution13460 {
       }
     }
 
-    leftB(mazeW, blueBall);
+    setExitLoca(exit);
+
+    leftB(global_mazeW, blueBall);
+    upR(global_mazeW, redBall);
+    downR(global_mazeW, redBall);
+    downB(global_mazeW, blueBall);
 //    rightB(mazeW, blueBall);
 
-    upR(mazeW, redBall);
-    Arrays.stream(mazeW).forEach(System.out::println);
+    Arrays.stream(global_mazeW).forEach(System.out::println);
     System.out.println("빨간공 위치");
     Arrays.stream(redBall).forEach(System.out::println);
     System.out.println("파란공 위치");
     Arrays.stream(blueBall).forEach(System.out::println);
+    System.out.println(keep);
 
     return 0;
   }
@@ -57,8 +65,9 @@ public class Solution13460 {
     mazeW[locate[1]] = mazeW[locate[1]].replace("R", ".");
     mazeW[locate[1]] = mazeW[locate[1]].replaceFirst("\\.", "R");
     redBall = locate;
-    mazeW = turn(mazeW);
-    this.mazeW = mazeW;
+    global_mazeW = turn(mazeW);
+
+    if (redBall[0] - 1 == exitLoca[0]) keep = false;
   }
 
   public void downR(String[] mazeW, int[] locate) {
@@ -69,16 +78,9 @@ public class Solution13460 {
     rev = rev.replaceFirst("\\.", "R");
     redBall = locate;
     mazeL[locate[1]] = revStr(rev);
-    this.mazeW = turn(mazeL);
-  }
+    global_mazeW = turn(mazeL);
 
-  public void upB(String[] mazeW, int[] locate) {
-    String[] mazeL = turn(mazeW);
-    locate[0] = mazeL[locate[1]].indexOf(".");
-    mazeL[locate[1]] = mazeL[locate[1]].replace("B", ".");
-    mazeL[locate[1]] = mazeL[locate[1]].replaceFirst("\\.", "B");
-    blueBall = locate;
-    this.mazeW = turn(mazeL);
+    if (redBall[0] + 1 == exitLoca[0]) keep = false;
   }
 
   public void leftR(String[] mazeW, int[] locate) {
@@ -86,15 +88,9 @@ public class Solution13460 {
     mazeW[locate[0]] = mazeW[locate[0]].replace("R", ".");
     mazeW[locate[0]] = mazeW[locate[0]].replaceFirst("\\.", "R");
     redBall = locate;
-    this.mazeW = mazeW;
-  }
+    global_mazeW = mazeW;
 
-  public void leftB(String[] mazeW, int[] locate) {
-    locate[1] = mazeW[locate[0]].indexOf(".");
-    mazeW[locate[0]] = mazeW[locate[0]].replace("B", ".");
-    mazeW[locate[0]] = mazeW[locate[0]].replaceFirst("\\.", "B");
-    blueBall = locate;
-    this.mazeW = mazeW;
+    if (redBall[1] - 1 == exitLoca[1]) keep = false;
   }
 
   public void rightR(String[] mazeW, int[] locate) {
@@ -104,7 +100,37 @@ public class Solution13460 {
     rev = rev.replaceFirst("\\.", "R");
     redBall = locate;
     mazeW[locate[0]] = revStr(rev);
-    this.mazeW = mazeW;
+    global_mazeW = mazeW;
+
+    if (redBall[1] + 1 == exitLoca[1]) keep = false;
+  }
+
+  public void upB(String[] mazeW, int[] locate) {
+    mazeW = turn(mazeW);
+    locate[0] = mazeW[locate[1]].indexOf(".");
+    mazeW[locate[1]] = mazeW[locate[1]].replace("B", ".");
+    mazeW[locate[1]] = mazeW[locate[1]].replaceFirst("\\.", "B");
+    blueBall = locate;
+    global_mazeW = turn(mazeW);
+  }
+
+  public void downB(String[] mazeW, int[] locate) {
+    String[] mazeL = turn(mazeW);
+    String rev = revStr(mazeL[locate[1]]);
+    locate[0] = rev.length() - rev.indexOf(".") - 1;
+    rev = rev.replace("B", ".");
+    rev = rev.replaceFirst("\\.", "B");
+    blueBall = locate;
+    mazeL[locate[1]] = revStr(rev);
+    global_mazeW = turn(mazeL);
+  }
+
+  public void leftB(String[] mazeW, int[] locate) {
+    locate[1] = mazeW[locate[0]].indexOf(".");
+    mazeW[locate[0]] = mazeW[locate[0]].replace("B", ".");
+    mazeW[locate[0]] = mazeW[locate[0]].replaceFirst("\\.", "B");
+    blueBall = locate;
+    global_mazeW = mazeW;
   }
 
   public void rightB(String[] mazeW, int[] locate) {
@@ -114,20 +140,20 @@ public class Solution13460 {
     rev = rev.replaceFirst("\\.", "B");
     blueBall = locate;
     mazeW[locate[0]] = revStr(rev);
-    this.mazeW = mazeW;
+    global_mazeW = mazeW;
   }
 
   public static void setMazeW(String[] mazeW) {
-    Solution13460.mazeW = mazeW;
+    Solution13460.global_mazeW = mazeW;
   }
 
-  public static void setRedBall(int[] redBall) {
-    Solution13460.redBall = redBall;
-  }
+  public static void setRedBall(int[] redBall) {Solution13460.redBall = redBall;}
 
-  public static void setBlueBall(int[] blueBall) {
-    Solution13460.blueBall = blueBall;
-  }
+  public static void setBlueBall(int[] blueBall) {Solution13460.blueBall = blueBall;}
+
+  public static void setExitLoca(int[] exit) {exitLoca = exit;}
+
+  public static void setKeep(boolean keep) {Solution13460.keep = keep;}
 
   public static String revStr(String str) {
     String revStr = "";

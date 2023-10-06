@@ -47,7 +47,7 @@ public class Solution13460 {
     upR(global_mazeW, redBall);
     downR(global_mazeW, redBall);
     downB(global_mazeW, blueBall);
-//    rightB(mazeW, blueBall);
+    rightR(global_mazeW, redBall);
 
     Arrays.stream(global_mazeW).forEach(System.out::println);
     System.out.println("빨간공 위치");
@@ -55,6 +55,7 @@ public class Solution13460 {
     System.out.println("파란공 위치");
     Arrays.stream(blueBall).forEach(System.out::println);
     System.out.println(keep);
+    Arrays.stream(exitLoca).forEach(System.out::println);
 
     return 0;
   }
@@ -84,9 +85,14 @@ public class Solution13460 {
   }
 
   public void leftR(String[] mazeW, int[] locate) {
-    locate[1] = mazeW[locate[0]].indexOf(".");
+    int repla = mazeW[locate[0]].length() - mazeW[locate[0]].replaceAll("#\\.+[#B]", "").length();
+    String repStr = "";
+    for (int i = 0; i < repla; i++) {
+      repStr += "#";
+    }
+    locate[1] = mazeW[locate[0]].replaceAll("#\\.+[#BO]", repStr).indexOf(".");
     mazeW[locate[0]] = mazeW[locate[0]].replace("R", ".");
-    mazeW[locate[0]] = mazeW[locate[0]].replaceFirst("\\.", "R");
+    mazeW[locate[0]] = mazeW[locate[0]].substring(0, repla) + "R" + mazeW[locate[0]].substring(repla);
     redBall = locate;
     global_mazeW = mazeW;
 
@@ -95,9 +101,16 @@ public class Solution13460 {
 
   public void rightR(String[] mazeW, int[] locate) {
     String rev = revStr(mazeW[locate[0]]);
-    locate[1] = rev.length() - rev.indexOf(".") - 1;
-    rev = rev.replace("R", ".");
-    rev = rev.replaceFirst("\\.", "R");
+    int repla = rev.length() - rev.replaceAll("#\\.+[#B]", "").length();
+    String repStr = "";
+    for (int i = 0; i < repla; i++) {
+      repStr += "#";
+    }
+    if(rev.replaceAll("#\\.+[#BO]", repStr).contains(".")) {
+      locate[1] = rev.replaceAll("#\\.+[#B]", repStr).indexOf(".");
+      rev = rev.replace("R", ".");
+      rev = rev.substring(0, repla) + "R" + rev.substring(repla);
+    }
     redBall = locate;
     mazeW[locate[0]] = revStr(rev);
     global_mazeW = mazeW;

@@ -16,7 +16,7 @@ public class Solution13460 {
 
     int[] redBall = new int[2];
     for (int i = 0; i < N; i++) {
-      if (mazeW[i].indexOf("R") != -1) {
+      if (mazeW[i].contains("R")) {
         redBall[0] = i;
         redBall[1] = mazeW[i].indexOf("R");
       }
@@ -26,7 +26,7 @@ public class Solution13460 {
 
     int[] blueBall = new int[2];
     for (int i = 0; i < N; i++) {
-      if (mazeW[i].indexOf("B") != -1) {
+      if (mazeW[i].contains("B")) {
         blueBall[0] = i;
         blueBall[1] = mazeW[i].indexOf("B");
       }
@@ -36,7 +36,7 @@ public class Solution13460 {
 
     int[] exit = new int[2];
     for (int i = 0; i < N; i++) {
-      if (mazeW[i].indexOf("O") != -1) {
+      if (mazeW[i].contains("O")) {
         exit[0] = i;
         exit[1] = mazeW[i].indexOf("O");
       }

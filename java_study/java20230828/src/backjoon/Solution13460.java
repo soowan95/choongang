@@ -44,13 +44,10 @@ public class Solution13460 {
 
     setExitLoca(exit);
 
-//    up();
-    downR(global_mazeW, redBall);
-    downB(global_mazeW, blueBall);
-    right();
-//    leftB(global_mazeW, blueBall);
-//    leftR(global_mazeW, redBall);
-//    down();
+    up();
+    down();
+//    downR(global_mazeW, redBall);
+//    downB(global_mazeW, blueBall);
 
     System.out.println("count = " + count);
     Arrays.stream(global_mazeW).forEach(System.out::println);
@@ -65,22 +62,28 @@ public class Solution13460 {
   }
 
   public void up() {
-    if (redBall[0] > blueBall[0]) {
+    if (redBall[0] < blueBall[0] && redBall[1] == blueBall[1]) {
       upR(global_mazeW, redBall);
       upB(global_mazeW, blueBall);
+    } else if (redBall[0] > blueBall[0] && redBall[1] == blueBall[1]) {
+      upB(global_mazeW, blueBall);
+      upR(global_mazeW, redBall);
     } else {
-      upB(global_mazeW, blueBall);
       upR(global_mazeW, redBall);
+      upB(global_mazeW, blueBall);
     }
   }
 
   public void down() {
-    if (redBall[0] < blueBall[0]) {
+    if (redBall[0] < blueBall[0] && redBall[1] == blueBall[1]) {
       downB(global_mazeW, blueBall);
       downR(global_mazeW, redBall);
+    } else if (redBall[0] > blueBall[0] && redBall[1] == blueBall[1]) {
+      downR(global_mazeW, redBall);
+      downB(global_mazeW, blueBall);
     } else {
-      downR(global_mazeW, redBall);
       downB(global_mazeW, blueBall);
+      downR(global_mazeW, redBall);
     }
   }
 

@@ -340,4 +340,59 @@ react : view객체가 client의 ip에 존재해서 server의 presentation계층�
 http (hypertext transfer protocol) : 하이퍼텍스트 전송 규약
   request : (메소드) (경로) (버전) /는 기본 경로 ex) GET / HTTP/1.1
 
+2023.10.17 Tue
+spring
+@Component : @SpringBootApplication가 붙은 클래스를 담고 있는 패키지와 모든 하위 패키지의 class를 찾아서 Component어노테이션으 붙은 class중 이름이 같은 class를 spring의 beancontext에 자동으로 객체를 생성해줌.
+이름 설정 방법 : @Component("") 처럼 소괄호 안에 직접 지정 가능
+                       @Component 처럼 직접 지정 안할시 해당 class를 lowerCamelCase으로 지정됨.
 
+beancontext에 있는 객체를 직접 사용하고 싶으면 ApplicationContext에 있는 getBean메소드를 이용해서 직접 사용 가능.
+- getBean("@Component가 읽을 이름")으로 사용하면 Object타입으로 리턴하고
+- getBean("@Component가 읽을 이름", 해당 class.class)로 사용하면 해당 class로 자동 형변환하여 리턴함
+
+이때 getBean메소드를 통해서 가져오는 객체는 모두 하나의 객체로 동일함
+
+@Autowired : 의존성이 있는 field에 의존성을 주입해줄 메소드에 사용
+
+의존성이란 예를들어
+
+class A {
+
+ public void methodA() {
+ }
+}
+
+class B {
+
+ private A feild;
+
+ public B(A feild) {
+  this.field = field;
+ }
+
+ public void setField(A field) {
+  this.field = field;
+ }
+
+ public void methodB() {
+  feild.methodA();
+ }
+}
+
+이런 class두개가 있을 때 B에 있는 methodB를 사용하기 위해선 생성자나 set메소드를 통해 반드시 field에 값을 주입해 줘야함. 이때 field는 class B에 있지만 class A에 따라 달라지므로 field는 class A에 의존성이 있다고 함.
+위 상황에서는 field에 의존성을 주입할 수 있는 수단이 생성자와 setter가 있으므로 Autowired어노테이션을 둘 중 하나에 붙인다면 개발자가 직접 주입하지 않아도 spring이 알아서 주입을 해줌.
+주입할 수 있는 수단이 하나라면 Autowired 생략 가능
+
+interface에 의해 의존성을 갖는다면 그 interface를 구현한 class가 있어야 함.
+만약 그 interface를 구현한 class가 2개 이상이고 2개 이상의 class에 Component어노테이션이 붙어 있다면 의존성 주입의 수단의 파라미터에 @Qualifier("Component이름")을 통해 주입 받을 class를 특정 할 수 있음.
+
+
+@RequiredArgsConstructor : 만약 의존성 있는 field가 final이라면 lombok에 있는 @RequiredArgsConstructor을 통해 생성자도 생략 가능.
+
+@PostConstruct : 이 어노테이션이 붙은 메소드는 따로 호출하지 않아도 서버 실행 단계에서 자동으로 실행됨.
+
+@Configuration : bean으로 만들어야 할 class가 다른 파일에 있어 @Component를 붙이지 못 할 경우 그 class의 객체를 만드는 메소드(@Bean을 붙여야 함)를 가진 class에 붙여 @Componenet처럼 사용할 수 있음. 이때 bean의 이름은 lowerCamelCase가 아니라 @Bean이 붙은 메소드의 이름이 됨.
+
+Mybatis
+@Mapper : 해당 interface를 bean으로 등록함.
+@Select(쿼리문 작성) : 구현한 메소드를 쿼리문 날리는 메소드로 만들어 줌. 소괄호 안에 #{} 쓰면 preparedStatement의 ? 처럼 사용 가능함. #의 스코프 안에는 해당 메소드의 파라미터를 적으면 됨.

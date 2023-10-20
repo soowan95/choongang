@@ -422,3 +422,17 @@ dynamic sql : 쿼리문에 if, foreach등을 사용해서 쿼리문을 동적으
   -속성(attribute)
     name="" : 쿼리문 내에서 #{}에 사용될 이름 지정
     value="" : 읽어들인 파라미터를 어떻게 수정할지 작성
+
+2023.10.20 Fri
+MyBatis
+@Options(useGeneratedKeys = true, keyProperty = "") : 리퀘스트로 받아온 정보 외에도 table에서 key값을 얻어올 수 있음. keyProperty에 자바bean에 있는 key를 담을 프로퍼티명을 작성하면 됨.
+Spring
+transaction(트랜잭션) : 어떤 일이 동시에 일어날 때 동시에 일어날 일 중 하나가 완료되지 않으면 다른 일들도 실행하지 않게 하는 것. 완료되지 않은 트랜잭션을 완료시키는 방법은
+  ROLLBACK : 어떤 일도 실행되지 않은 시점으로 돌아감.
+  COMMTI : 지금까지 일어난 일만 반영 시킴.
+두개가 있음
+@EnableTransactionManagement : @Transactional을 사용하기 위해 서버를 실행하는 main메소드가 있는 클래스에 사용
+@Transactional : 이 어노테이션이 붙은 메소드가 끝까지 실행되지 않으면 자동으로 ROLLBACK함. @Transactional을 Proxy Server를 거쳐서 실행시키려면 다른 class에 선언하고 의존성을 주입받아 실행하야 함. @Transactional을 class에 붙이면 그 class내의 모든 메소드에 적용됨.
+JSP
+파일 전송 할때 form의 속성은 반드시 method="post" enctype="multipart/form-data"를 추가해야 함.
+파일을 controller에서 받을때는 파라미터의 데이터타입을 MultipartFile로 받아야함.

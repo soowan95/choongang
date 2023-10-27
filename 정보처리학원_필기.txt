@@ -436,3 +436,7 @@ transaction(트랜잭션) : 어떤 일이 동시에 일어날 때 동시에 일�
 JSP
 파일 전송 할때 form의 속성은 반드시 method="post" enctype="multipart/form-data"를 추가해야 함.
 파일을 controller에서 받을때는 파라미터의 데이터타입을 MultipartFile로 받아야함.
+
+2023.10.27 Fri
+Git
+git fetch --prune : 원격저장소에서 삭제한 branch가 있다면 로컬저장소에서도 그 branch를 삭제하며 fetch.
